@@ -13,22 +13,28 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`getInstalledApps()`](#getinstalledapps)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### getInstalledApps()
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+getInstalledApps() => Promise<{ value: string; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+This method returns all the installed applications in your device!
+It returns JSON string containing an array of objects having the following structure:
+```json
+[{
+  "packageName": "",
+  "encodedIcon": "" -- Base64 encoded string
+}]
+```
+NOTE: Currently only supported for Android
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
